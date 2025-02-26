@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <style>
+        body {
+            background-color: bisque;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh;
+            margin: 0; /* Remove default margin */
+            background-color: lightgray; /* Just for visibility */
+        }
+        h1{
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        .buttons{
+            display: grid;
+        }
+        
+        #Add-Task{
+            height: 30px;
+            margin-bottom: 8px;
+            border-radius: 7px;
+        }
+
+        .completed{
+            text-decoration: line-through;
+        }
+        
+        .container{
+            padding: 10px 25px;
+            padding-bottom: 20px;
+            border: 1px solid black;
+            margin-top: 0px;
+            border-radius: 12px;
+            background-color: rgb(193, 139, 205);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #ul{
+            display: grid;
+            column-gap: 10px;
+            grid-template-columns: 3fr 1fr;
+            margin: 0;
+            padding: 10px;
+        }
+        
+        .delete{
+            border-radius: 5px;
+            height: 37px;
+            color: white;
+            padding: 5px;
+            box-shadow: 1px 1px 1px rgba(255, 255, 255,50%);
+            background-color: rgb(235, 11, 11);
+            border: 1px solid black;
+        }
+
+        .delete:hover{ 
+            background-color: rgb(216, 104, 104);
+        }
+
+        .delete:active{
+            box-shadow: none;
+            transform: translate(1px,1px);
+        }
+
+        #ul li{
+            height: 25px;
+            padding: 5px;
+            background-color: #a2eedf;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .pending{
+            margin: 0;
+            margin-top: 12px;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+        #Add-Button{
+            height: 25px;
+            background-color: greenyellow;
+            border-radius: 5px;
+        }
+
+        #Add-Button:hover{
+            background-color: rgba(136, 255, 0, 0.644);
+        }
+
+        #Add-Button:active{
+            transform: translate(1px,1px);
+        }
+
+        .tooltip{
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tooltip-text{
+            z-index: 100;
+            visibility:hidden ;
+            position: absolute;
+            width: 140px;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            bottom: -40px;
+            right: -100px;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .tooltip:hover .tooltip-text{
+            visibility: visible;
+            opacity: 0.7;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <div class="buttons">
+            <input type="text" name="" id="Add-Task" placeholder="Enter your task">
+            <button id="Add-Button">Add task</button>
+            <p class="pending">Pending Tasks:</p>
+            <ul id="ul">
+            </ul>
+        </div>
+    </div>
+    <script src="functionality.js"></script>
+</body>
+</html>
